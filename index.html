@@ -164,7 +164,8 @@ a { color: inherit; }
   background: #000;
 }
 .video-embed iframe,
-.video-embed video {
+.video-embed video,
+.video-embed #ytplayer {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   border: 0;
@@ -695,10 +696,7 @@ footer a:hover { color: var(--accent); }
 
   <div class="video-frame reveal">
     <div class="video-embed">
-      <video controls playsinline preload="metadata" poster="video/poster.jpg">
-        <source src="video/vsl.mp4" type="video/mp4">
-        Your browser doesn't support HTML5 video. <a href="video/vsl.mp4">Download the video</a>.
-      </video>
+      <div id="ytplayer"></div>
     </div>
     <div class="video-caption">Watch first · 7 minutes</div>
   </div>
@@ -965,6 +963,37 @@ if ('IntersectionObserver' in window) {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+// YouTube IFrame API — request 4K playback on ready.
+// Note: YouTube treats setPlaybackQuality as a suggestion and may
+// override based on bandwidth, player size, or user preferences.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.head.appendChild(tag);
+
+var ytPlayer;
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('ytplayer', {
+    videoId: 'MsBJN56qtUw',
+    host: 'https://www.youtube-nocookie.com',
+    playerVars: {
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1,
+      vq: 'hd2160'
+    },
+    events: {
+      'onReady': function(event) {
+        try { event.target.setPlaybackQuality('hd2160'); } catch(e) {}
+      },
+      'onPlaybackQualityChange': function(event) {
+        if (event.data !== 'hd2160' && event.data !== 'highres') {
+          try { event.target.setPlaybackQuality('hd2160'); } catch(e) {}
+        }
+      }
+    }
+  });
 }
 </script>
 </body>
