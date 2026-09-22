@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pauls Kurzemnieks — 1:1 Founder Coaching</title>
+<meta name="description" content="Three months of private coaching for founders at $20K–$50K/month. Build a content strategy that speaks directly to the customer you actually want.">
+<meta property="og:title" content="Pauls Kurzemnieks — 1:1 Founder Coaching">
+<meta property="og:description" content="Three months of private coaching for founders at $20K–$50K/month. Build a content strategy that speaks directly to the customer you actually want.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif'%3EP%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg:        #F5EFE3;
+  --bg-alt:    #EFE7D6;
+  --ink:       #1A1613;
+  --ink-soft:  #4A4239;
+  --muted:     #7A6F60;
+  --hairline:  #DDD1B7;
+  --accent:    #A63A1E;
+  --accent-ink:#7A2814;
+  --card:      #FBF7EC;
+  --shadow:    0 1px 0 rgba(26,22,19,.04), 0 24px 60px -30px rgba(26,22,19,.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, video, iframe { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+
+/* nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(245,239,227,.88);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 32px; max-width: 1120px; margin: 0 auto;
+}
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.wordmark span { color: var(--accent); }
+.nav-cta {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 9px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+.nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+/* eyebrow */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content: ""; display: block; width: 24px; height: 1px; background: var(--accent);
+}
+
+/* hero */
+.hero { padding: 88px 0 56px; text-align: center; }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 28px auto 24px;
+  max-width: 15ch;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-ink);
+}
+.hero .sub {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  color: var(--ink-soft);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+/* video frame */
+.video-frame {
+  position: relative;
+  max-width: 940px;
+  margin: 24px auto 0;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.video-frame::before, .video-frame::after {
+  content: ""; position: absolute;
+  width: 10px; height: 10px;
+  border: 1px solid var(--ink);
+  opacity: .12;
+}
+.video-frame::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.video-frame::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border: 0;
+}
+.video-caption {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* CTAs */
+.cta-row { margin-top: 40px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+  cursor: pointer;
+  border: 0;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: 0 12px 30px -12px rgba(26,22,19,.5);
+}
+.btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+.btn-primary::after {
+  content: "→";
+  transition: transform .18s ease;
+}
+.btn-primary:hover::after { transform: translateX(4px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+}
+.btn-ghost:hover { border-color: var(--ink); }
+
+/* stat row */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 56px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-top: 88px;
+  text-align: center;
+}
+.stat .num {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stat .num em { font-style: italic; font-weight: 300; color: var(--accent-ink); }
+.stat .lbl {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .stat-row { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* section base */
+section { padding: 112px 0; }
+.section-head { text-align: center; margin-bottom: 64px; }
+.section-head h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 24px;
+  max-width: 20ch;
+  margin-left: auto; margin-right: auto;
+}
+.section-head h2 em { font-style: italic; font-weight: 300; color: var(--accent-ink); }
+.section-head .lede {
+  margin-top: 22px;
+  max-width: 620px;
+  margin-left: auto; margin-right: auto;
+  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* problem section */
+.problem { background: var(--bg-alt); }
+.problem-copy p {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.problem-copy p.aphorism {
+  font-style: italic;
+  color: var(--accent-ink);
+  border-left: 1px solid var(--accent);
+  padding-left: 20px;
+  margin: 32px 0;
+}
+.problem-copy p:last-child { margin-bottom: 0; }
+
+/* frame grid */
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.frame-cell {
+  padding: 40px 28px;
+  border-right: 1px solid var(--hairline);
+  background: var(--card);
+}
+.frame-cell:last-child { border-right: 0; }
+.frame-letter {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.frame-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.frame-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+@media (max-width: 900px) {
+  .frame-grid { grid-template-columns: repeat(2, 1fr); }
+  .frame-cell { border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .frame-cell:nth-child(2n) { border-right: 0; }
+  .frame-cell:last-child { border-bottom: 0; }
+}
+@media (max-width: 540px) {
+  .frame-grid { grid-template-columns: 1fr; }
+  .frame-cell { border-right: 0; border-bottom: 1px solid var(--hairline); }
+  .frame-cell:last-child { border-bottom: 0; }
+}
+
+/* what you get */
+.deliverables {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.deliverable {
+  padding: 32px 28px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+}
+.deliverable .d-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.deliverable h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.deliverable p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+@media (max-width: 700px) {
+  .deliverables { grid-template-columns: 1fr; }
+}
+
+/* investment card */
+.invest {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 64px 48px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 40px 80px -40px rgba(26,22,19,.7);
+}
+.invest .eyebrow { color: #E4B999; }
+.invest .eyebrow::before { background: #E4B999; }
+.invest h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 20px 0 28px;
+}
+.invest h3 em { font-style: italic; color: #E4B999; font-weight: 300; }
+.invest .price {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 12px 0 6px;
+}
+.invest .price sup { font-size: 0.4em; vertical-align: super; color: #E4B999; margin-right: 4px; }
+.invest .period {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,239,227,.65);
+  margin-bottom: 32px;
+}
+.invest ul {
+  list-style: none;
+  text-align: left;
+  max-width: 480px;
+  margin: 0 auto 40px;
+  columns: 1;
+}
+.invest ul li {
+  padding: 10px 0 10px 28px;
+  position: relative;
+  border-bottom: 1px solid rgba(228,185,153,.15);
+  font-size: 15px;
+  color: rgba(245,239,227,.9);
+}
+.invest ul li:last-child { border-bottom: 0; }
+.invest ul li::before {
+  content: "";
+  position: absolute; left: 0; top: 18px;
+  width: 14px; height: 1px; background: #E4B999;
+}
+.invest .btn-primary {
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 12px 30px -12px rgba(0,0,0,.4);
+}
+.invest .btn-primary:hover { background: #E4B999; color: var(--ink); }
+.invest .addon {
+  margin-top: 28px;
+  font-size: 13px;
+  color: rgba(245,239,227,.55);
+  letter-spacing: 0.01em;
+}
+.invest .addon strong { color: #E4B999; font-weight: 500; }
+
+/* who this is for */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.fit-col {
+  padding: 40px 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: var(--card);
+}
+.fit-col.no { background: transparent; }
+.fit-col h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 12px;
+}
+.fit-col h4::before {
+  display: inline-block;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.fit-col.yes h4::before { content: "✓"; background: var(--accent); color: var(--bg); }
+.fit-col.no h4::before { content: "✕"; background: transparent; color: var(--muted); border: 1px solid var(--hairline); }
+.fit-col ul { list-style: none; }
+.fit-col li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.fit-col li:last-child { border-bottom: 0; }
+@media (max-width: 700px) {
+  .fit-grid { grid-template-columns: 1fr; }
+}
+
+/* about */
+.about {
+  background: var(--bg-alt);
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-photo {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-ink) 100%);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.about-photo::before {
+  content: "PK";
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 120px;
+  color: rgba(245,239,227,.28);
+  letter-spacing: -0.04em;
+}
+.about h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 20px 0 24px;
+}
+.about h2 em { font-style: italic; font-weight: 300; color: var(--accent-ink); }
+.about p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { max-width: 280px; margin: 0 auto; }
+}
+
+/* faq */
+.faq-list details {
+  border-bottom: 1px solid var(--hairline);
+  padding: 24px 0;
+}
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list summary {
+  cursor: pointer;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 24px;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent);
+  transition: transform .2s ease;
+  flex-shrink: 0;
+}
+.faq-list .a {
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+/* final cta */
+.final-cta {
+  text-align: center;
+  padding: 128px 0;
+  background: var(--bg);
+  position: relative;
+}
+.final-cta::before, .final-cta::after {
+  content: "";
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--accent);
+  margin: 0 auto 40px;
+}
+.final-cta::after { margin: 40px auto 0; }
+.final-cta h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  margin: 0 auto 32px;
+  color: var(--ink);
+}
+.final-cta p {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  color: var(--ink-soft);
+  font-size: 17px;
+}
+
+/* footer */
+footer {
+  border-top: 1px solid var(--hairline);
+  padding: 40px 32px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+footer .wordmark { font-size: 16px; margin-bottom: 10px; display: block; }
+footer a { color: var(--ink-soft); text-decoration: none; margin: 0 10px; }
+footer a:hover { color: var(--accent); }
+
+/* motion */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="wordmark">Pauls <span>Kurzemnieks</span></div>
+    <a href="#apply" class="nav-cta">Apply</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <span class="eyebrow">Private 1:1 Coaching · 3 Months</span>
+  <h1>Build content that attracts <em>the right customer</em>, not the biggest crowd.</h1>
+  <p class="sub">For founders at $20K–$50K/month whose content is polished, consistent, and still not converting into the clients they actually want.</p>
+
+  <div class="video-frame reveal">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/MsBJN56qtUw?rel=0&modestbranding=1" title="Founder coaching — watch this first" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-caption">Watch first · 7 minutes</div>
+  </div>
+
+  <div class="cta-row">
+    <a href="#apply" class="btn btn-primary">Apply to work with me</a>
+    <a href="#frame" class="btn btn-ghost">See the method</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stat-row">
+    <div class="stat">
+      <div class="num"><em>300K</em>/mo</div>
+      <div class="lbl">Own content reach</div>
+    </div>
+    <div class="stat">
+      <div class="num">400K<em>+</em></div>
+      <div class="lbl">Client video views</div>
+    </div>
+    <div class="stat">
+      <div class="num"><em>12</em> calls</div>
+      <div class="lbl">Over 3 months, 1:1</div>
+    </div>
+  </div>
+</div>
+
+<section class="problem">
+  <div class="narrow">
+    <div class="section-head">
+      <span class="eyebrow">The Real Problem</span>
+      <h2>You're not posting <em>too little</em>. You're posting for <em>the wrong person</em>.</h2>
+    </div>
+    <div class="problem-copy">
+      <p>You've built a real business. Something that works. Something that pays.</p>
+      <p>But your content isn't at the level your business is.</p>
+      <p>Maybe an agency ships you clean-looking posts designed for a massive audience. So you get views from people who will never buy from you.</p>
+      <p>Or you're doing it by the book — posting daily, giving value, sharing tips — and nothing really happens. People watch. Maybe follow. Then disappear.</p>
+      <p class="aphorism">Reach isn't the goal. Reach is a byproduct. The goal is the right person watching, trusting, and eventually working with you.</p>
+      <p>You haven't been doing anything wrong. You've been taught to optimize for the wrong thing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="frame">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Method</span>
+      <h2>The <em>FRAME</em> Method</h2>
+      <p class="lede">Five pillars that turn generic value-posting into content only you could have made — and only your ideal customer would care about.</p>
+    </div>
+    <div class="frame-grid">
+      <div class="frame-cell">
+        <div class="frame-letter">F</div>
+        <div class="frame-name">Focus</div>
+        <div class="frame-desc">Know your ideal customer deeper than age and industry. Their day, decisions, fears, ambitions — the stuff most brands never bother with.</div>
+      </div>
+      <div class="frame-cell">
+        <div class="frame-letter">R</div>
+        <div class="frame-name">Repetition</div>
+        <div class="frame-desc">Reinforce the same positioning until the market can't picture the category without you in it.</div>
+      </div>
+      <div class="frame-cell">
+        <div class="frame-letter">A</div>
+        <div class="frame-name">Authority</div>
+        <div class="frame-desc">Your external and internal Outliers — background, results, beliefs, how you actually think. The things no one can copy off you.</div>
+      </div>
+      <div class="frame-cell">
+        <div class="frame-letter">M</div>
+        <div class="frame-name">Mechanism</div>
+        <div class="frame-desc">Don't tell them what to do. Show them why it works. Belief shift beats another value-post every time.</div>
+      </div>
+      <div class="frame-cell">
+        <div class="frame-letter">E</div>
+        <div class="frame-name">Emotion</div>
+        <div class="frame-desc">Information doesn't move people. Feeling does. Every post should make the right person feel, rethink, or reframe.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What You Get</span>
+      <h2>Three months. <em>Twelve calls.</em> Zero templates.</h2>
+      <p class="lede">Not a course. Not a Slack group. Private, hands-on work on your business, your customer, your positioning — until the content lands.</p>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable">
+        <div class="d-num">01</div>
+        <h3>12 × 1:1 calls</h3>
+        <p>One hour, four times a month, for three months. Screen-share, real work, real feedback — not another group Q&amp;A you'll be talked over in.</p>
+      </div>
+      <div class="deliverable">
+        <div class="d-num">02</div>
+        <h3>Async WhatsApp support</h3>
+        <p>Voice notes, drafts, hook reviews, on-the-spot decisions between calls. You get me, not a form to fill in and wait on.</p>
+      </div>
+      <div class="deliverable">
+        <div class="d-num">03</div>
+        <h3>Weekly accountability</h3>
+        <p>A structured weekly check-in so momentum compounds instead of stalling in month two.</p>
+      </div>
+      <div class="deliverable">
+        <div class="d-num">04</div>
+        <h3>Content strategy &amp; positioning</h3>
+        <p>What you talk about, what you get known for, what you deliberately don't touch. Built from your business, not a swipe file.</p>
+      </div>
+      <div class="deliverable">
+        <div class="d-num">05</div>
+        <h3>Scripts, hooks, video feedback</h3>
+        <p>Turn ideas into content that actually communicates. Every draft reviewed until it's shipping, not sitting in Notes.</p>
+      </div>
+      <div class="deliverable">
+        <div class="d-num">06</div>
+        <h3>Your own ICP Blueprint</h3>
+        <p>A private strategic document you keep and use long after the three months. Who, what, why, and how — codified.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Investment</span>
+      <h2>One offer. One price. <em>No tiers.</em></h2>
+    </div>
+    <div class="invest">
+      <span class="eyebrow">1:1 Founder Coaching</span>
+      <h3>Twelve private calls over <em>three months</em></h3>
+      <div class="price"><sup>$</sup>6,000</div>
+      <div class="period">Total · 3 months · 12 calls</div>
+      <ul>
+        <li>12 × 1:1 strategy calls (one hour each)</li>
+        <li>Async WhatsApp support between sessions</li>
+        <li>Weekly accountability check-ins</li>
+        <li>Content strategy, positioning &amp; scripts</li>
+        <li>Ongoing video and hook feedback</li>
+        <li>Your ICP Blueprint — yours to keep</li>
+      </ul>
+      <a href="https://form.typeform.com/to/oT1EvoCr" class="btn btn-primary" target="_blank" rel="noopener">Apply to work with me</a>
+      <div class="addon"><strong>Optional:</strong> add editing done by my team — <strong>+$1,500</strong>. You show up and record. We handle post.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Fit Check</span>
+      <h2>This is <em>for</em> — and definitely <em>not for</em>.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <h4>For you if</h4>
+        <ul>
+          <li>You're already doing $20K–$50K/month and your business works.</li>
+          <li>Your content feels generic compared to how good the actual work is.</li>
+          <li>You want fewer, better viewers — not another follower count.</li>
+          <li>You want to be personally involved, not outsource yourself.</li>
+          <li>You'd rather do 12 focused calls than watch 40 hours of course video.</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h4>Not for you if</h4>
+        <ul>
+          <li>You're pre-revenue or still validating what you sell.</li>
+          <li>You want someone to run your account so you don't have to show up.</li>
+          <li>You want templates, viral hacks, or a "10× your reach" promise.</li>
+          <li>You're looking for the cheapest option, not the right one.</li>
+          <li>You want group coaching or a course library. This isn't that.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div>
+        <span class="eyebrow">Who You're Working With</span>
+        <h2>I stopped chasing <em>everyone</em>. That's when it worked.</h2>
+        <p>I'm Pauls. I've spent the last decade making videos — first as a filmmaker for brands and hospitality, then building my own audience the same way I now help clients build theirs.</p>
+        <p>When I stopped making content for "everyone" and started making it specifically for the person I actually wanted to work with, views sometimes went down. Clients went up. Trust went up. Positioning got sharper. And what I could charge changed entirely.</p>
+        <p>That's the shift I now install in founders one at a time. Not with hacks. With a method — the same one you saw in the video.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Things founders <em>actually ask</em>.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Why not just hire an agency?</summary>
+        <div class="a">You can. Agencies are useful. But an agency has many clients — you're one of many accounts. I work with you one-on-one, learn your business, your customer, your positioning, and give feedback tied to your specific situation. Not another generic post designed for a mass audience.</div>
+      </details>
+      <details>
+        <summary>How much time will this take from me each week?</summary>
+        <div class="a">Plan for one 60-minute call per week plus 2–4 hours of implementation (recording, editing decisions, message reviews). Async WhatsApp support absorbs the smaller decisions so we don't burn call time on them.</div>
+      </details>
+      <details>
+        <summary>Do I need to be on camera?</summary>
+        <div class="a">For personal-brand founders, yes — content that positions you eventually has you in it. If you're camera-shy, we'll build up to it and shape a format that fits you. I've walked business owners from "I hate this" to running their own shoots in weeks.</div>
+      </details>
+      <details>
+        <summary>What if I already have content that works?</summary>
+        <div class="a">Better. We sharpen what's working, kill what's not, and re-anchor everything to the customer you actually want. Fewer swings, higher hit-rate.</div>
+      </details>
+      <details>
+        <summary>What if I want editing done for me too?</summary>
+        <div class="a">Add the editing package — +$1,500 over the three months — and my team handles post-production so you focus on showing up and recording.</div>
+      </details>
+      <details>
+        <summary>Is there a payment plan?</summary>
+        <div class="a">Yes. We can discuss on the call if you're a fit. Default is paid in full up front for the three-month program.</div>
+      </details>
+      <details>
+        <summary>What happens after I apply?</summary>
+        <div class="a">You fill out a short application. If we're a match, we jump on a call to talk through your business, your goals, and whether this is the right container for you. If not, I'll tell you plainly — no pressure sales.</div>
+      </details>
+      <details>
+        <summary>Why only a limited number of clients?</summary>
+        <div class="a">Because this is genuinely one-on-one. If I take on 50 people, everyone gets a fraction of my attention. I'd rather work with fewer founders and actually be involved.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="narrow">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Stop posting for the crowd. Start posting for the customer.</h2>
+    <p>If your business already works and your content doesn't reflect it — this is what fixes that. Twelve calls. Three months. One offer.</p>
+    <a href="https://form.typeform.com/to/oT1EvoCr" class="btn btn-primary" target="_blank" rel="noopener">Apply to work with me</a>
+  </div>
+</section>
+
+<footer>
+  <span class="wordmark">Pauls <span style="color: var(--accent);">Kurzemnieks</span></span>
+  <div>SIA · Riga, Latvia</div>
+  <div style="margin-top: 14px;">
+    <a href="https://instagram.com/realpaulzy" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://realpaulzy.com" target="_blank" rel="noopener">Store</a>
+    <a href="mailto:paulskurzemnieks@gmail.com">Contact</a>
+  </div>
+  <div style="margin-top: 18px; opacity: .7;">© <span id="yr"></span> Pauls Kurzemnieks. All rights reserved.</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+// gentle reveal
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
