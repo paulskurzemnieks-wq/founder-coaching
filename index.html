@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/im21h11tv4.js" async type="module"></script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' fill='%23FFC75E'%3EP%3C/text%3E%3C/svg%3E">
 <style>
 :root {
@@ -165,13 +167,21 @@ a { color: inherit; }
 }
 .video-embed iframe,
 .video-embed video,
-.video-embed #ytplayer {
+.video-embed wistia-player {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   border: 0;
   background: #000;
 }
 .video-embed video { object-fit: cover; }
+.video-embed wistia-player { display: block; }
+wistia-player[media-id='im21h11tv4']:not(:defined) {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: center / cover no-repeat url('https://fast.wistia.com/embed/medias/im21h11tv4/swatch');
+  display: block;
+  filter: blur(5px);
+}
 .video-caption {
   margin-top: 18px;
   font-size: 12px;
@@ -696,7 +706,7 @@ footer a:hover { color: var(--accent); }
 
   <div class="video-frame reveal">
     <div class="video-embed">
-      <div id="ytplayer"></div>
+      <wistia-player media-id="im21h11tv4" aspect="1.7777777777777777"></wistia-player>
     </div>
     <div class="video-caption">Watch first · 7 minutes</div>
   </div>
@@ -963,37 +973,6 @@ if ('IntersectionObserver' in window) {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-}
-
-// YouTube IFrame API — request 4K playback on ready.
-// Note: YouTube treats setPlaybackQuality as a suggestion and may
-// override based on bandwidth, player size, or user preferences.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
-
-var ytPlayer;
-function onYouTubeIframeAPIReady() {
-  ytPlayer = new YT.Player('ytplayer', {
-    videoId: 'MsBJN56qtUw',
-    host: 'https://www.youtube-nocookie.com',
-    playerVars: {
-      rel: 0,
-      modestbranding: 1,
-      playsinline: 1,
-      vq: 'hd2160'
-    },
-    events: {
-      'onReady': function(event) {
-        try { event.target.setPlaybackQuality('hd2160'); } catch(e) {}
-      },
-      'onPlaybackQualityChange': function(event) {
-        if (event.data !== 'hd2160' && event.data !== 'highres') {
-          try { event.target.setPlaybackQuality('hd2160'); } catch(e) {}
-        }
-      }
-    }
-  });
 }
 </script>
 </body>
